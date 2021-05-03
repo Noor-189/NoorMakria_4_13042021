@@ -44,10 +44,10 @@ function launchModal() {
     for (let i=0; i< allSpans.length; i++) {
         allSpans[i].innerHTML = "";
     };
-    // On met tous les checkboxes à unchecked
+    // On met à jour tous les checkboxes
     allCheckboxLocations.checked = false;
     condUtilisation.checked = true;
-    nextEvent.checked = false;
+    nextEvent.checked = false
     // on retire les bordures vertes/rouges
     for (let i=0; i< allInputs.length; i++) {
         allInputs[i].classList.remove("green-border");
@@ -86,6 +86,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         e.preventDefault();
         allSpans[0].innerHTML = error; // ----- j'affiche l'erreur dans le span correspondant
         allInputs[0].classList.add("red-border");
+        allInputs[0].classList.remove("green-border");
         return false; // --------------------- On met false pour être sûr que rien ne se passe
     } else { // ------------------------ *** (ELSE) Si on n'a pas d'erreur:
         allSpans[0].innerHTML = ""; // -------- On vide le span
@@ -103,6 +104,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         e.preventDefault();
         allSpans[1].innerHTML = error;
         allInputs[1].classList.add("red-border");
+        allInputs[1].classList.remove("green-border");
         return false;
     } else {
         allSpans[1].innerHTML = "";
@@ -119,6 +121,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         e.preventDefault();
         allSpans[2].innerHTML = error;
         allInputs[2].classList.add("red-border");
+        allInputs[2].classList.remove("green-border");
         return false;
     } else {
         allSpans[2].innerHTML = "";
@@ -135,6 +138,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         e.preventDefault();
         allSpans[3].innerHTML = error;
         allInputs[3].classList.add("red-border");
+        allInputs[3].classList.remove("green-border");
         return false;
     } else {
         allSpans[3].innerHTML = "";
@@ -151,6 +155,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         e.preventDefault();
         allSpans[4].innerHTML = error;
         allInputs[4].classList.add("red-border");
+        allInputs[4].classList.remove("green-border");
         return false;
     } else {
         allSpans[4].innerHTML = "";
