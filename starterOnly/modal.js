@@ -35,7 +35,7 @@ const regexEmail = /\S+@\S+\.\S+/; // regex pour la validation des mails
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+// launch modal form (button "Je m'inscris")
 function launchModal() {
     // on remet tous les inputs à 0 et spans d'erreur à ""
     for (let i=0; i< allInputs.length; i++) {
