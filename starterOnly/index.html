@@ -13,7 +13,7 @@
         <div class="topnav" id="myTopnav">
             <!-- Header : Logo -->
             <div class="header-logo">
-                <img alt="logo" src="Logo.png" width="auto" height="auto" />
+                <img src="Logo.png" alt="GameOn Logo"/>
             </div>
             <!-- Header : Navbar -->
             <div class="main-navbar">     
@@ -29,7 +29,7 @@
         </div>
         <!-- Main -->
         <main>
-            <!-- Main: Banner  -->
+            <!-- Banner  -->
             <div class="hero-section">
                 <!-- Banner : Texte + bg-image -->
                 <div class="hero-content">
@@ -40,18 +40,16 @@
                 </div>
                 <!-- Banner : Background image -->
                 <div class="hero-img">
-                    <img src="./bg_img.jpg" alt="img" />
+                    <img src="./bg_img.jpg" alt="hero img" />
                 </div>
-                <!-- Banner : Button -->
+                <!-- banner : Button -->
                 <button class="btn-signup modal-btn">je m'inscris</button>
             </div>
-            <!-- Main: Modal entière -->
+            <!-- Modal entière -->
             <div class="bground">
                 <!-- modal contenu entier (span quit "X" + modal-body) -->
                 <div class="content">
-                    <!-- l'icone close -->
                     <span class="close"></span>
-                    <!-- Corps de la modal -->
                     <div class="modal-body">
                         <!-- Formulaire -->
                         <form name="reserve" action="index.html" method="get"> <!--onsubmit="return validate(event)"-->
@@ -59,7 +57,7 @@
                             <div class="formData">
                                 <label for="first">Prénom</label>
                                 <br>
-                                <input id="first" class="text-control" type="text" name="first" />
+                                <input id="first" class="text-control" type="text" name="first" /> <!--required minlength="2"-->
                                 <br>
                                 <span class="error-alert"></span>
                             </div>
@@ -75,7 +73,7 @@
                             <div class="formData">
                                 <label for="email">E-mail</label>
                                 <br>
-                                <input id="email" class="text-control" name="email"/>
+                                <input id="email" class="text-control" type="email" name="email"/>
                                 <br>
                                 <span class="error-alert"></span>
                             </div>
@@ -92,10 +90,10 @@
                                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
                                 <br>
                                 <input id="quantity" type="number" class="text-control" name="quantity" min="0" max="99">
+                                <span class="error-alert"></span>
                             </div>
-                            <span class="error-alert"></span>
                             <p class="text-label">Quelles villes ?</p>
-                            <!-- checkboxes cocher la ville -->
+                            <!-- checkbox cocher la ville -->
                             <div class="formData">
                                 <input class="checkbox-input city" type="radio" id="location1" name="location" value="New York"/>
                                 <label class="checkbox-label" for="location1">
@@ -132,8 +130,8 @@
                             </div>
                             <!-- Checkboxes conditions générales/être prévenu -->
                             <div class="formData">
-                                <input class="checkbox-input" type="checkbox" id="checkbox1" checked /> 
-                                <label class="checkbox2-label" for="checkbox1" required>
+                                <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
+                                <label class="checkbox2-label" for="checkbox1">
                                     <span class="checkbox-icon"></span>
                                     J'ai lu et accepté les conditions d'utilisation.
                                 </label>
@@ -146,10 +144,9 @@
                                 <br>
                                 <span class="error-alert"></span>
                             </div>
-                            <!-- Input submit: C'est parti! -->
-                            <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
+                            <!-- input: C'est parti! -->
+                            <input class="btn-submit button" type="submit" value="C'est parti"/>
                         </form>
-                        <!-- Box de confirmation -->
                         <div class="confirmation-box">
                             <span>Merci ! Votre réservation a été reçue</span>
                             <button class="btn-exitModal">Fermer</button>

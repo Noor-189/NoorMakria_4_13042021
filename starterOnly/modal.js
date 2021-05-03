@@ -43,6 +43,10 @@ function launchModal() {
     birthDateInput.value = "";
     quantityInput.value = "";
     allCheckboxLocations.checked = false;
+    // on retire la border verte 
+    for (let i=0; i< allInputs.length; i++) {
+        allInputs[i].classList.remove("green-border");
+    };
     // on retire la confirmationBox
     confirmationBox.style.display = "none";
     // on affiche le form
@@ -172,7 +176,7 @@ document.forms["reserve"].addEventListener("submit", function(e) {
         return false;
     } else {
         allSpans[6].innerHTML = "";
-    }
+    };
 
     // Affichage de la modal de confirmation
     // On fait disparaitre le form

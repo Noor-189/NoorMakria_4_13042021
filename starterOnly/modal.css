@@ -157,9 +157,12 @@
   .red-border { /*Classe ajouté lorsque message d'erreur dans les inputs*/
       border: 2px solid red;
   }
-  .green-border { /*Classe ajouté lorsque les inputs redeviennent vert*/
+  .green-border { /*Classe ajouté lorsque les inputs deviennent vert*/
       border: 2px solid #279E7A;
   }
+  .white-border { /*inputs mis à jour*/
+    border: 2px solid white;
+}
   .text-control {
     margin: 0;
     padding: 8px;
