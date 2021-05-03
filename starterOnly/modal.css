@@ -9,7 +9,6 @@
     padding: 0;
   }
   /* -----------------Landing Page--------------------- */
-  
   body {
     margin: 0;
     display: flex;
@@ -50,19 +49,19 @@
     font-size: 20px;
     font-family: Roboto, sans-serif;
   }
-  .topnav a:hover {
+  .topnav a:hover { /*Le logo lorsque hover*/
     background-color: #ff0000;
     color: #ffffff;
     border-radius: 15px;
   }  
-  .topnav a.active {
+  .topnav a.active { /*l'onglet actif du menu*/
     background-color: #ff0000;
     color: #ffffff;
     border-radius: 15px;
   }
-  .topnav .icon {
+  .topnav .icon { /*Le logo de base*/
     display: none;
-    color: red;
+    color: #ff0000;
   }
   /* -----------------------Main------------------------- */
   main {
@@ -475,7 +474,15 @@
   }
   
   /* MEDIA QUERIES */
-  @media screen and (max-width: 1130px) { /*800px*/
+  @media screen and (max-width: 1130px) {
+      .topnav a {
+        display: none;
+      }
+      .topnav a.icon {
+        display: block;
+        font-size: 2.3rem;
+        float: right;
+      }  
       .hero-section {
         display: block;
         box-shadow: unset;
@@ -513,16 +520,6 @@
         text-align: center;
       }
   }
-  @media screen and (max-width: 1130px) { /*768px*/
-      .topnav a {
-          display: none;
-      }
-      .topnav a.icon {
-          display: block;
-          font-size: 2.3rem;
-          float: right;
-      }
-  }
   @media screen and (max-width: 768px) {
       main {
           margin: 0;
@@ -535,29 +532,67 @@
           text-align: left;
           float: none;
       }
+      .main-navbar a.icon {
+        width: 60px;
+        text-align: center;
+        float: right;
+      }
+      .main-navbar a.icon:hover {
+        width: 60px;
+        text-align: center;
+        float: right;
+      }
       .hero-section {
           text-align: center;
       }
       .hero-content {
           text-align: center;
       }
+      .header-logo {
+        width: 200px;
+        margin-top: 7px;
+    }
   }
+
   @media screen and (max-width: 540px) {
-      .topnav a {display: none;}
-      .topnav a.icon {
-          display: block;
-          float: right;
-          margin-top: 10px;
-          color: red;
-          font-size: 1.5rem;
+      .topnav a {
+          display: none;
+        }
+      .topnav a.active { /*l'onglet actif du menu*/
+        background-color: #ff0000;
+        color: #ffffff;
+        border-radius: 15px;
+      }
+      .topnav a.icon { /*Le logo hamburger*/
+        display: block;
+        float: right;
+        color: red;
+        font-size: 1.5rem;
+        padding: 10px;
+        width: 40px;
+      }
+      .topnav a.icon:hover { /*Le logo hamburger lorsque hover*/
+        display: block;
+        float: right;
+        color: #ffffff;
+        font-size: 1.5rem;
+        width: 40px;
       }
       .main-navbar {
-          text-align: center;
+        text-align: center;
       }
-      .header-logo {
+      .topnav.responsive a {
+          text-align: right;
+          margin-top: 20px;
+      }
+      .main-navbar .icon {
+        padding: 0;
+      }
+      .header-logo { /*container logo GameOn*/
           width: 200px;
+          margin-top: 10px;
       }
-      .header-logo img {
+      .header-logo img { /*img du logo GameOn*/
           width: 100%;
       }
       .hero-section {
