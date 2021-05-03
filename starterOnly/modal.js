@@ -17,15 +17,16 @@ const modalBody = document.querySelector(".modal-body");
 const main = document.querySelector("main");
 const body = document.querySelector("body");
 const form = document.querySelector("form");
-const firstNameInput = document.getElementById("first"); // input text control 1
-const lastNameInput = document.getElementById("last"); // input text control 2
+const firstNameInput = document.getElementById("first"); // input text control 1 (first name)
+const lastNameInput = document.getElementById("last"); // input text control 2 (last name)
 const emailInput = document.getElementById("email"); // input text control 3
 const birthDateInput = document.getElementById("birthdate"); // input text control 4
 const quantityInput = document.getElementById("quantity"); // input text control 5
 const allInputs = document.querySelectorAll('.text-control'); // les inputs textcontrol (prénom/nom/email/date naissance/tournois)
 const allSpans = document.querySelectorAll('span.error-alert'); // span des messages d'erreur
 const allCheckboxLocations = document.querySelectorAll('.checkbox-input.city'); // checkboxes des villes
-const condUtilisation = document.getElementById("checkbox1"); // checkboxes conditions d'utilisation
+const condUtilisation = document.getElementById("checkbox1"); // checkbox conditions d'utilisation
+const nextEvent = document.getElementById("checkbox2"); // checkbox prochains evenements
 const confirmationBox = document.querySelector(".confirmation-box") // la modal confirmation
 const exitBtnModal = document.querySelector(".btn-exitModal"); // bouton fermer modal
 const regexName = /^[a-zA-Z]*$/; // regex pour la validation des noms (caractères alphabétiques)
@@ -36,16 +37,21 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-    // on remet tous les input à 0
-    firstNameInput.value = "";
-    lastNameInput.value = "";
-    emailInput.value = "";
-    birthDateInput.value = "";
-    quantityInput.value = "";
+    // on remet tous les inputs à 0 et spans d'erreur à ""
+    for (let i=0; i< allInputs.length; i++) {
+        allInputs[i].value = "";
+    };
+    for (let i=0; i< allSpans.length; i++) {
+        allSpans[i].innerHTML = "";
+    };
+    // On met tous les checkboxes à unchecked
     allCheckboxLocations.checked = false;
-    // on retire la border verte 
+    condUtilisation.checked = true;
+    nextEvent.checked = false;
+    // on retire les bordures vertes/rouges
     for (let i=0; i< allInputs.length; i++) {
         allInputs[i].classList.remove("green-border");
+        allInputs[i].classList.remove("red-border");
     };
     // on retire la confirmationBox
     confirmationBox.style.display = "none";
